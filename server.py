@@ -52,12 +52,11 @@ def update():
     save_data(data)
     return jsonify({'ok': True})
 
-@app.route('/get/<username>', methods=['GET'])
-def get_user_data(username):
+# ✅ Route DEBUG: xem toàn bộ dữ liệu
+@app.route('/dump', methods=['GET'])
+def dump_data():
     data = load_data()
-    if username not in data:
-        return jsonify({'error': 'not found'}), 404
-    return jsonify({'ok': True, 'data': data[username]})
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
