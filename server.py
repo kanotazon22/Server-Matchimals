@@ -23,7 +23,7 @@ def save_data(data):
 @app.route('/')
 def home():
     print(f"{timestamp()} ⏺️ / called")
-    return '✅ Server Match-2 Online'
+    return '✅ Server Match-2 Online debug'
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -71,7 +71,3 @@ def dump_data():
     data = load_data()
     print(f"{timestamp()} 📂 /dump requested")
     return jsonify(data)
-
-if __name__ == '__main__':
-    print(f"{timestamp()} 🚀 Server starting on 0.0.0.0:5000")
-    app.run(host='0.0.0.0')
